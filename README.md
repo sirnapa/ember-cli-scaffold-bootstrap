@@ -7,7 +7,7 @@
 
 ## Installation
 
-In your ember-cli app, do `ember install ember-cli-scaffold`
+In your ember-cli app, do `ember install ember-cli-scaffold-bootstrap`
 
 ## Usage
 
