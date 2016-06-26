@@ -1,12 +1,18 @@
-{{link-to "<%= humanizedModuleName %> list" "<%= dasherizedModuleNamePlural %>.index" class="btn btn-primary" }}
+<h1 class="page-header">
+  <span class="pull-right text-muted">{{fa-icon "eye" fixedWidth=true}}</span>
+  {{#link-to "<%= dasherizedModuleNamePlural %>.index" tagName="a" }}{{fa-icon "arrow-left" fixedWidth=true}}{{/link-to}}
+  <%= humanizedModuleName %>
+</h1>
 
-<h1 class="page-heading"><%= humanizedModuleName %></h1>
-
-<% attrs.forEach(function(attr) { %>
-<div class="panel panel-default">
-  <div class="panel-heading"><%= attr.label %>:</div>
-  <div class="panel-body">
-    {{model.<%= attr.name %>}}
+<div class="form-horizontal">
+  <% attrs.forEach(function(attr) { %>
+  <div class="form-group">
+    <label class="control-label col-md-4"><%= attr.label %></label>
+    <div class="col-md-8">
+      <p class="form-control-static">
+        {{model.<%= attr.name %>}}
+      </p>
+    </div>
   </div>
+  <% }); %>
 </div>
-<% }); %>

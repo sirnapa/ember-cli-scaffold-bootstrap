@@ -1,2 +1,6 @@
-<h1 class="page-header">Edit <%= humanizedModuleName %></h1>
+<h1 class="page-header">
+  <span class="pull-right text-muted">{{fa-icon "pencil" fixedWidth=true}}</span>
+  {{#link-to "<%= dasherizedModuleNamePlural %>.index" tagName="a" }}{{fa-icon "arrow-left" fixedWidth=true}}{{/link-to}}
+  <%= humanizedModuleName %>
+</h1>
 {{partial "<%= dasherizedModuleNamePlural %>/form"}}

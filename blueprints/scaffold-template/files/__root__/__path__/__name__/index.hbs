@@ -1,17 +1,18 @@
-<h1 class="page-header"><%= humanizedModuleNamePlural %> list</h1>
-
-{{link-to "New <%= humanizedModuleName %>" "<%= dasherizedModuleNamePlural %>.new" tagName="button" class="btn btn-primary" }}
+<h1 class="page-header">
+  {{#link-to "<%= dasherizedModuleNamePlural %>.new" tagName="button" class="pull-right" }}{{fa-icon "plus-circle" fixedWidth=true}}{{/link-to}}
+  <%= humanizedModuleNamePlural %>
+</h1>
 
 {{#if model.length}}
   <div class="table-responsive">
-    <table class="table table-striped">
+    <table class="table table-bordered table-striped">
       <thead>
         <tr><% attrs.forEach(function(attr) { %>
           <th>
             <%= attr.label %>
           </th><% }); %>
           <th colspan="3">
-            Actions
+            Acciones
           </th>
         </tr>
       </thead>
@@ -21,14 +22,20 @@
             <td>
               {{<%= camelizedModuleName %>.<%= attr.name %>}}
             </td><% }); %>
-            <td>
-              {{link-to "Edit" "<%= dasherizedModuleNamePlural %>.edit" <%= camelizedModuleName %>}}
+            <td class="text-center">
+              {{#link-to "<%= dasherizedModuleNamePlural %>.show" <%= camelizedModuleName %>}}
+                {{fa-icon "eye" fixedWidth=true}}
+              {{/link-to}}
             </td>
-            <td>
-              {{link-to "Show" "<%= dasherizedModuleNamePlural %>.show" <%= camelizedModuleName %>}}
+            <td class="text-center">
+              {{#link-to "<%= dasherizedModuleNamePlural %>.edit" <%= camelizedModuleName %>}}
+                {{fa-icon "pencil" fixedWidth=true}}
+              {{/link-to}}
             </td>
-            <td>
-              <a href="#" {{action "remove" <%= camelizedModuleName %>}}>Remove</a>
+            <td class="text-center">
+              <a href="#" {{action "remove" <%= camelizedModuleName %>}}>
+                {{fa-icon "times" fixedWidth=true}}
+              </a>
             </td>
           </tr>
         {{/each}}
