@@ -1,7 +1,12 @@
 <h1 class="page-header">
-  <span class="pull-right text-muted">{{fa-icon "plus-circle" fixedWidth=true}}</span>
-  {{#link-to "<%= dasherizedModuleNamePlural %>.index" tagName="a" }}{{fa-icon "arrow-left" fixedWidth=true}}{{/link-to}}
-  <%= humanizedModuleName %>
+  <span class="pull-right text-muted">
+      <i class="fa fa-plus-circle fa-fw"></i>
+  </span>
+  {{#link-to "<%= dasherizedModuleNamePlural %>.index" tagName="a" }}
+    <i class="fa fa-arrow-left fa-fw"></i>
+    {{t "button.back"}}
+  {{/link-to}}
+  {{t "<%= dasherizedModuleName %>.new.title"}}
 </h1>
 
 {{partial "<%= dasherizedModuleNamePlural %>/form"}}

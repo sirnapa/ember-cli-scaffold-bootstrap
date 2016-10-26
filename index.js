@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-cli-scaffold-rapid-bootstrap'
+  name: 'ember-cli-scaffold-bootstrap'
 };

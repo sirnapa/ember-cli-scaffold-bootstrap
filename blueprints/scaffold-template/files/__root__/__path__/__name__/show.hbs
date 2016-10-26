@@ -1,13 +1,20 @@
 <h1 class="page-header">
-  <span class="pull-right text-muted">{{fa-icon "eye" fixedWidth=true}}</span>
-  {{#link-to "<%= dasherizedModuleNamePlural %>.index" tagName="a" }}{{fa-icon "arrow-left" fixedWidth=true}}{{/link-to}}
-  <%= humanizedModuleName %>
+  <span class="pull-right text-muted">
+      <i class="fa fa-eye fa-fw"></i>
+  </span>
+  {{#link-to "<%= dasherizedModuleNamePlural %>.index" tagName="a" }}
+    <i class="fa fa-arrow-left fa-fw"></i>
+    {{t "button.back"}}
+  {{/link-to}}
+  {{t "<%= dasherizedModuleName %>.show.title"}}
 </h1>
 
 <div class="form-horizontal">
   <% attrs.forEach(function(attr) { %>
   <div class="form-group">
-    <label class="control-label col-md-4"><%= attr.label %></label>
+    <label class="control-label col-md-4">
+        {{t "<%= dasherizedModuleName %>.<%= attr.name %>"}}
+    </label>
     <div class="col-md-8">
       <p class="form-control-static">
         {{model.<%= attr.name %>}}
