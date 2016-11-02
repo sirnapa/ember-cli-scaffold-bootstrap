@@ -1,11 +1,7 @@
 <h1 class="page-header">
-  <span class="pull-right text-muted">
-      <i class="fa fa-pencil fa-fw"></i>
-  </span>
-  {{#link-to "<%= dasherizedModuleNamePlural %>.index" tagName="a" }}
-    <i class="fa fa-arrow-left fa-fw"></i>
+  {{#link-to "<%= dasherizedModuleNamePlural %>.index" tagName="a" class="btn btn-back"}}
     {{t "button.back"}}
   {{/link-to}}
-  {{t "<%= dasherizedModuleName %>.edit.title"}}
+  {{t "<%= dasherizedModuleName %>.title.edit"}}
 </h1>
 {{partial "<%= dasherizedModuleNamePlural %>/form"}}

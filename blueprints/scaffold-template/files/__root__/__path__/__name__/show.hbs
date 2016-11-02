@@ -1,12 +1,8 @@
 <h1 class="page-header">
-  <span class="pull-right text-muted">
-      <i class="fa fa-eye fa-fw"></i>
-  </span>
-  {{#link-to "<%= dasherizedModuleNamePlural %>.index" tagName="a" }}
-    <i class="fa fa-arrow-left fa-fw"></i>
+  {{#link-to "<%= dasherizedModuleNamePlural %>.index" tagName="a" class="btn btn-back"}}
     {{t "button.back"}}
   {{/link-to}}
-  {{t "<%= dasherizedModuleName %>.show.title"}}
+  {{t "<%= dasherizedModuleName %>.title.show"}}
 </h1>
 
 <div class="form-horizontal">
@@ -16,9 +12,11 @@
         {{t "<%= dasherizedModuleName %>.<%= attr.name %>"}}
     </label>
     <div class="col-md-8">
-      <p class="form-control-static">
-        {{model.<%= attr.name %>}}
-      </p>
+      <p class="form-control-static"><% if(attr.type == "boolean"){ %>
+            {{t model.<%= attr.name %>}}
+        <%} else{ %>
+            {{model.<%= attr.name %>}}
+      <%}  %></p>
     </div>
   </div>
   <% }); %>
