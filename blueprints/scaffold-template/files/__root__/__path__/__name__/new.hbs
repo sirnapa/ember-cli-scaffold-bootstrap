@@ -1,8 +1,14 @@
-<h1 class="page-header">
-  {{#link-to "<%= dasherizedModuleNamePlural %>.index" tagName="a" class="btn btn-back"}}
-    {{t "button.back"}}
-  {{/link-to}}
-  {{t "<%= dasherizedModuleName %>.title.new"}}
-</h1>
+<div class="panel panel-new">
+    <div class="panel-heading">
+        {{#link-to "<%= dasherizedModuleNamePlural %>.index" tagName="a" class="btn btn-back"}}
+          {{t "button.back"}}
+        {{/link-to}}
+        <h1>
+            {{t "<%= dasherizedModuleName %>.title.new"}}
+        </h1>
+    </div>
 
-{{partial "<%= dasherizedModuleNamePlural %>/form"}}
+    <div class="panel-body">
+        {{partial "<%= dasherizedModuleNamePlural %>/form"}}
+    </div>
+</div>

@@ -1,48 +1,53 @@
-<h1 class="page-header">
-  {{#link-to "<%= dasherizedModuleNamePlural %>.new" tagName="a" class="pull-right btn btn-new" }}
-    {{t "button.new"}}
-  {{/link-to}}
-  {{t "<%= dasherizedModuleName %>.title.index"}}
-</h1>
-
-{{#if model.length}}
-  <div class="table-responsive">
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr><% attrs.forEach(function(attr) { %>
-          <th>
-            {{t "<%= dasherizedModuleName %>.<%= attr.name %>"}}
-          </th><% }); %>
-          <th class="text-center">
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each model as |<%= camelizedModuleName %>|}}
-          <tr><% attrs.forEach(function(attr) { %>
-            <td><% if(attr.type == "boolean"){ %>
-                  {{t <%= camelizedModuleName %>.<%= attr.name %>}}
-              <%} else{ %>
-                  {{<%= camelizedModuleName %>.<%= attr.name %>}}
-            <%}  %></td><% }); %>
-            <td class="text-center">
-              {{#link-to "<%= dasherizedModuleNamePlural %>.show" <%= camelizedModuleName %> class="btn btn-show"}}
-                {{t "action.show"}}
-              {{/link-to}}
-              {{#link-to "<%= dasherizedModuleNamePlural %>.edit" <%= camelizedModuleName %> class="btn btn-edit"}}
-                {{t "action.edit"}}
-              {{/link-to}}
-              <a href="#" {{action "remove" <%= camelizedModuleName %>}} class="btn btn-remove">
-                {{t "action.remove"}}
-              </a>
-            </td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  </div>
-{{else}}
-  <p id="blankslate">
-    {{t "<%= dasherizedModuleName %>.empty"}}
-  </p>
-{{/if}}
+<div class="panel panel-index">
+    <div class="panel-heading">
+        {{#link-to "<%= dasherizedModuleNamePlural %>.new" tagName="a" class="pull-right btn btn-new" }}
+            {{t "button.new"}}
+        {{/link-to}}
+        <h1>
+            {{t "<%= dasherizedModuleName %>.title.index"}}
+        </h1>
+    </div>
+    {{#if model.length}}
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr><% attrs.forEach(function(attr) { %>
+                  <th>
+                    {{t "<%= dasherizedModuleName %>.<%= attr.name %>"}}
+                  </th><% }); %>
+                  <th class="text-center">
+                  </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each model as |<%= camelizedModuleName %>|}}
+                  <tr><% attrs.forEach(function(attr) { %>
+                    <td><% if(attr.type == "boolean"){ %>
+                          {{t <%= camelizedModuleName %>.<%= attr.name %>}}
+                      <%} else{ %>
+                          {{<%= camelizedModuleName %>.<%= attr.name %>}}
+                    <%}  %></td><% }); %>
+                    <td class="text-center">
+                      {{#link-to "<%= dasherizedModuleNamePlural %>.show" <%= camelizedModuleName %> class="btn btn-show"}}
+                        {{t "action.show"}}
+                      {{/link-to}}
+                      {{#link-to "<%= dasherizedModuleNamePlural %>.edit" <%= camelizedModuleName %> class="btn btn-edit"}}
+                        {{t "action.edit"}}
+                      {{/link-to}}
+                      <a href="#" {{action "remove" <%= camelizedModuleName %>}} class="btn btn-remove">
+                        {{t "action.remove"}}
+                      </a>
+                    </td>
+                  </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    {{else}}
+    <div class="panel-body">
+        <p id="blankslate">
+            {{t "<%= dasherizedModuleName %>.empty"}}
+        </p>
+    </div>
+    {{/if}}
+</div>
