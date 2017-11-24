@@ -1,15 +1,15 @@
 {{#em-form action="save" on="submit"}}
   <% attrs.forEach(function(attr) {
       if(attr.type == "string"){ %>
-          {{em-input label=(t "<%= dasherizedModuleName %>.<%= attr.name %>") property="<%= attr.name %>" model=model}}
+          {{em-input label=(t "<%= dasherizedModuleName %>.attributes.<%= attr.name %>") property="<%= attr.name %>" model=model}}
       <%} else if(attr.type == "boolean"){ %>
-          {{em-input-checkbox label=(t "<%= dasherizedModuleName %>.<%= attr.name %>") property="<%= attr.name %>" model=model}}
+          {{em-input-checkbox label=(t "<%= dasherizedModuleName %>.attributes.<%= attr.name %>") property="<%= attr.name %>" model=model}}
       <%} else if(attr.type == "number"){ %>
-          {{em-input-number label=(t "<%= dasherizedModuleName %>.<%= attr.name %>") property="<%= attr.name %>" model=model}}
+          {{em-input-number label=(t "<%= dasherizedModuleName %>.attributes.<%= attr.name %>") property="<%= attr.name %>" model=model}}
       <%} else if(attr.type == "date"){ %>
-          {{em-input-date label=(t "<%= dasherizedModuleName %>.<%= attr.name %>") property="<%= attr.name %>" model=model}}
+          {{em-input-date label=(t "<%= dasherizedModuleName %>.attributes.<%= attr.name %>") property="<%= attr.name %>" model=model}}
       <%} else{ %>
-          {{em-select label=(t "<%= dasherizedModuleName %>.<%= attr.name %>") property="<%= attr.name %>" model=model content="<%= attr.name %>" contentLabel="nombre" }}
+          {{em-select label=(t "<%= dasherizedModuleName %>.attributes.<%= attr.name %>") property="<%= attr.name %>" model=model content="<%= attr.name %>" contentLabel="nombre" }}
       <%}
    }); %>
 {{/em-form}}

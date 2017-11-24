@@ -14,10 +14,10 @@ export default Ember.Mixin.create(AuthenticatedRouteMixin, {
       this.currentModel.save().then(function() {
         route.get('busy').hide();
         route.transitionTo('<%= dasherizedModuleNamePlural %>');
-        route.get('notify').success(route.get('i18n').t('<% dasherizedModuleName %>.messages.save.success'));
+        route.get('notify').success(route.get('i18n').t('<%= dasherizedModuleName %>.messages.save.success'));
       }, function() {
         route.get('busy').hide();
-        route.get('notify').error(route.get('i18n').t('<% dasherizedModuleName %>.messages.save.error'));
+        route.get('notify').error(route.get('i18n').t('<%= dasherizedModuleName %>.messages.save.error'));
       });
     }
   },

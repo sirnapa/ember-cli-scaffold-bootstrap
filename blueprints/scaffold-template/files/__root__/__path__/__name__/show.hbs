@@ -13,7 +13,7 @@
           <% attrs.forEach(function(attr) { %>
           <div class="form-group">
             <label class="control-label col-md-4">
-                {{t "<%= dasherizedModuleName %>.<%= attr.name %>"}}
+                {{t "<%= dasherizedModuleName %>.attributes.<%= attr.name %>"}}
             </label>
             <div class="col-md-8">
               <p class="form-control-static"><% if(attr.type == "boolean"){ %>
