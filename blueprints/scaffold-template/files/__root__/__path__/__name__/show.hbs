@@ -1,14 +1,14 @@
 <div class="card card-show">
-    <div class="card-header">
-        {{#link-to "<%= dasherizedModuleNamePlural %>.index" tagName="a" class="btn btn-back"}}
-          {{t "button.back"}}
-        {{/link-to}}
-        <h1>
-            {{t "<%= dasherizedModuleName %>.title.show"}}
-        </h1>
-    </div>
-
     <div class="card-body">
+        <div>
+            {{#link-to "<%= dasherizedModuleNamePlural %>.index" tagName="a" class="btn btn-back"}}
+              {{t "button.back"}}
+            {{/link-to}}
+            <h1 class="card-title">
+                {{t "<%= dasherizedModuleName %>.title.show"}}
+            </h1>
+        </div>
+        
         <div class="form-horizontal">
           <% attrs.forEach(function(attr) { %>
           <div class="form-group">

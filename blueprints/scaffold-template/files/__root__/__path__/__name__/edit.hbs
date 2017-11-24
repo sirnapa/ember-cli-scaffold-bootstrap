@@ -1,14 +1,14 @@
 <div class="card card-edit">
-    <div class="card-header">
-        {{#link-to "<%= dasherizedModuleNamePlural %>.index" tagName="a" class="btn btn-back"}}
-          {{t "button.back"}}
-        {{/link-to}}
-        <h1>
-            {{t "<%= dasherizedModuleName %>.title.edit"}}
-        </h1>
-    </div>
-
     <div class="card-body">
+        <div>
+            {{#link-to "<%= dasherizedModuleNamePlural %>.index" tagName="a" class="btn btn-back"}}
+              {{t "button.back"}}
+            {{/link-to}}
+            <h1 class="card-title">
+                {{t "<%= dasherizedModuleName %>.title.edit"}}
+            </h1>
+        </div>
+
         {{partial "<%= dasherizedModuleNamePlural %>/form"}}
     </div>
 </div>
