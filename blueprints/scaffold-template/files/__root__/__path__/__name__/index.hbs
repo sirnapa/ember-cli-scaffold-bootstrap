@@ -1,5 +1,5 @@
-<div class="panel panel-index">
-    <div class="panel-heading">
+<div class="card card-index">
+    <div class="card-header">
         {{#link-to "<%= dasherizedModuleNamePlural %>.new" tagName="a" class="pull-right btn btn-new" }}
             {{t "button.new"}}
         {{/link-to}}
@@ -45,7 +45,7 @@
     </div>
     {{page-numbers content=content}}
     {{else}}
-    <div class="panel-body">
+    <div class="card-body">
         <p id="blankslate">
             {{t "<%= dasherizedModuleName %>.messages.empty"}}
         </p>
