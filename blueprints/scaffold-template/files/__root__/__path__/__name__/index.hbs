@@ -29,15 +29,20 @@
                               {{<%= camelizedModuleName %>.<%= attr.name %>}}
                         <%}  %></td><% }); %>
                         <td class="text-center">
-                          {{#link-to "<%= dasherizedModuleNamePlural %>.show" <%= camelizedModuleName %> class="btn btn-show"}}
-                            {{t "action.show"}}
-                          {{/link-to}}
-                          {{#link-to "<%= dasherizedModuleNamePlural %>.edit" <%= camelizedModuleName %> class="btn btn-edit"}}
-                            {{t "action.edit"}}
-                          {{/link-to}}
-                          <a href="#" {{action "remove" <%= camelizedModuleName %>}} class="btn btn-remove">
-                            {{t "action.remove"}}
-                          </a>
+                            <div class="btn-group dropdown" role="group" aria-label="Basic example">
+                                {{#link-to "<%= dasherizedModuleNamePlural %>.show" <%= camelizedModuleName %> class="btn btn-secondary btn-show"}}
+                                  {{t "action.show"}}
+                                {{/link-to}}
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="<%= dasherizedModuleNamePlural %>.{{<%= camelizedModuleName %>.id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu" aria-labelledby="<%= dasherizedModuleNamePlural %>.{{<%= camelizedModuleName %>.id}}">
+                                  {{#link-to "<%= dasherizedModuleNamePlural %>.edit" <%= camelizedModuleName %> class="dropdown-item btn-edit"}}
+                                    {{t "action.edit"}}
+                                  {{/link-to}}
+                                  <a href="#" {{action "remove" <%= camelizedModuleName %>}} class="dropdown-item btn-remove">
+                                    {{t "action.remove"}}
+                                  </a>
+                                </div>
+                            </div>
                         </td>
                       </tr>
                     {{/each}}
