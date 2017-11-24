@@ -8,11 +8,11 @@
                 {{t "<%= dasherizedModuleName %>.title.show"}}
             </h1>
         </div>
-        
+
         <div class="form-horizontal">
           <% attrs.forEach(function(attr) { %>
-          <div class="form-group">
-            <label class="control-label col-md-4">
+          <div class="form-group row">
+            <label class="control-label col-md-4 text-right">
                 {{t "<%= dasherizedModuleName %>.attributes.<%= attr.name %>"}}
             </label>
             <div class="col-md-8">
