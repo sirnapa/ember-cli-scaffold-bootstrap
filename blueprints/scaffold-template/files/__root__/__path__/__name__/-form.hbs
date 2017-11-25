@@ -9,7 +9,7 @@
       <%} else if(attr.type == "date"){ %>
           {{em-input-date label=(t "<%= dasherizedModuleName %>.attributes.<%= attr.name %>") property="<%= attr.name %>" model=model}}
       <%} else{ %>
-          {{em-select label=(t "<%= dasherizedModuleName %>.attributes.<%= attr.name %>") property="<%= attr.name %>" model=model content="<%= attr.name %>" contentLabel="nombre" }}
+          {{em-select label=(t "<%= dasherizedModuleName %>.attributes.<%= attr.name %>") property="<%= attr.name %>" model=model content="<%= attr.name %>" contentLabel="name" }}
       <%}
    }); %>
 {{/em-form}}
