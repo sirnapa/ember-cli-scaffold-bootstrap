@@ -1,59 +1,57 @@
 <div class="card card-index">
     <div class="card-body">
-        <div>
-            {{#link-to "<%= dasherizedModuleNamePlural %>.new" tagName="a" class="float-right btn btn-new" }}
-                {{t "button.new"}}
-            {{/link-to}}
-            <h1 class="card-title">
-                {{t "<%= dasherizedModuleName %>.title.index"}}
-            </h1>
-        </div>
-        {{#if model.length}}
-        <div class="table-responsive">
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr><% attrs.forEach(function(attr) { %>
-                      <th>
-                        {{t "<%= dasherizedModuleName %>.attributes.<%= attr.name %>"}}
-                      </th><% }); %>
-                      <th class="text-center">
-                      </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each model as |<%= camelizedModuleName %>|}}
-                      <tr><% attrs.forEach(function(attr) { %>
-                        <td><% if(attr.type == "boolean"){ %>
-                              {{t <%= camelizedModuleName %>.<%= attr.name %>}}
-                          <%} else{ %>
-                              {{<%= camelizedModuleName %>.<%= attr.name %>}}
-                        <%}  %></td><% }); %>
-                        <td class="text-center">
-                            <div class="btn-group dropdown" role="group" aria-label="Basic example">
-                                {{#link-to "<%= dasherizedModuleNamePlural %>.show" <%= camelizedModuleName %> class="btn btn-secondary btn-show"}}
-                                  {{t "action.show"}}
-                                {{/link-to}}
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="<%= dasherizedModuleNamePlural %>.{{<%= camelizedModuleName %>.id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                <div class="dropdown-menu" aria-labelledby="<%= dasherizedModuleNamePlural %>.{{<%= camelizedModuleName %>.id}}">
-                                  {{#link-to "<%= dasherizedModuleNamePlural %>.edit" <%= camelizedModuleName %> class="dropdown-item btn-edit"}}
-                                    {{t "action.edit"}}
-                                  {{/link-to}}
-                                  <a href="#" {{action "remove" <%= camelizedModuleName %>}} class="dropdown-item btn-remove">
-                                    {{t "action.remove"}}
-                                  </a>
-                                </div>
-                            </div>
-                        </td>
-                      </tr>
-                    {{/each}}
-                </tbody>
-            </table>
-        </div>
-        {{page-numbers content=content}}
-        {{else}}
-            <p id="blankslate">
-                {{t "<%= dasherizedModuleName %>.messages.empty"}}
-            </p>
-        {{/if}}
+        {{#link-to "<%= dasherizedModuleNamePlural %>.new" tagName="a" class="float-right btn btn-new" }}
+            {{t "button.new"}}
+        {{/link-to}}
+        <h1 class="card-title">
+            {{t "<%= dasherizedModuleName %>.title.index"}}
+        </h1>
     </div>
+    {{#if model.length}}
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr><% attrs.forEach(function(attr) { %>
+                  <th>
+                    {{t "<%= dasherizedModuleName %>.attributes.<%= attr.name %>"}}
+                  </th><% }); %>
+                  <th class="text-center">
+                  </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each model as |<%= camelizedModuleName %>|}}
+                  <tr><% attrs.forEach(function(attr) { %>
+                    <td><% if(attr.type == "boolean"){ %>
+                          {{t <%= camelizedModuleName %>.<%= attr.name %>}}
+                      <%} else{ %>
+                          {{<%= camelizedModuleName %>.<%= attr.name %>}}
+                    <%}  %></td><% }); %>
+                    <td class="text-center">
+                        <div class="btn-group dropdown" role="group" aria-label="Basic example">
+                            {{#link-to "<%= dasherizedModuleNamePlural %>.show" <%= camelizedModuleName %> class="btn btn-secondary btn-show"}}
+                              {{t "action.show"}}
+                            {{/link-to}}
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="<%= dasherizedModuleNamePlural %>.{{<%= camelizedModuleName %>.id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                            <div class="dropdown-menu" aria-labelledby="<%= dasherizedModuleNamePlural %>.{{<%= camelizedModuleName %>.id}}">
+                              {{#link-to "<%= dasherizedModuleNamePlural %>.edit" <%= camelizedModuleName %> class="dropdown-item btn-edit"}}
+                                {{t "action.edit"}}
+                              {{/link-to}}
+                              <a href="#" {{action "remove" <%= camelizedModuleName %>}} class="dropdown-item btn-remove">
+                                {{t "action.remove"}}
+                              </a>
+                            </div>
+                        </div>
+                    </td>
+                  </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    {{page-numbers content=content}}
+    {{else}}
+    <div class="card-body">
+        {{t "<%= dasherizedModuleName %>.messages.empty"}}
+    </div>
+    {{/if}}
 </div>
