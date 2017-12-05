@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-scaffold-bootstrap",
-  "version": "1.4.0",
+  "version": "2.0",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -12,7 +12,7 @@
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "Max Goncharov",
+  "author": "Nelson Paez",
   "license": "MIT",
   "devDependencies": {
     "ember-cli": "^1.13.8",
@@ -21,8 +21,6 @@
     "mocha-jshint": "^1.0.0",
     "sinon": "^1.15.4",
     "walk-sync": "^0.1.3",
-    "ember-rapid-forms": "^0.7.2",
-    "ember-bootstrap": "0.4.1"
   },
   "keywords": [
     "ember-addon"
@@ -31,6 +29,7 @@
     "configPath": "tests/dummy/config"
   },
   "dependencies": {
+    "bootstrap": "^4.0.0-beta.2",
     "chalk": "1.0.0",
     "ember-busy-blocker": "0.1.0",
     "ember-cli-pagination": "3.0.2",
