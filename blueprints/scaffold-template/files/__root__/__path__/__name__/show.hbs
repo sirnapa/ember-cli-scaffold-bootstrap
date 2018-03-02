@@ -11,14 +11,19 @@
 
         <div class="form-horizontal">
           <% attrs.forEach(function(attr) { %>
-            {{#em-show label=(t "<%= dasherizedModuleName %>.attributes.<%= attr.name %>") property="<%= attr.name %>" model=model}}
-              <% if(attr.type == "boolean"){ %>
-                    {{t model.<%= attr.name %>}}
-                <%} else{ %>
-                    {{model.<%= attr.name %>}}
-              <%}  %>
+            {{#em-show label=(t "<%= dasherizedModuleName %>.attributes.<%= attr.name %>") <% if(attr.type == "boolean"){ %>always=true<%}  %>}}
+              <% if(attr.type == "boolean"){ %>{{t model.<%= attr.name %>}}<%} else{ %>{{model.<%= attr.name %>}}<%}  %>
             {{/em-show}}
           <% }); %>
+          <div class="card-actions">
+            {{#link-to "<%= dasherizedModuleNamePlural %>.edit" model class="btn btn-edit"}}
+              {{t "action.edit"}}
+            {{/link-to}}
+
+            <a href="#" {{action "remove" model}} class="btn btn-remove">
+              {{t "action.remove"}}
+            </a>
+          </div>
         </div>
     </div>
 </div>
