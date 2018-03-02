@@ -1,11 +1,17 @@
 <div class="card card-index">
     <div class="card-body">
-        {{#link-to "<%= dasherizedModuleNamePlural %>.new" tagName="a" class="float-right btn btn-new" }}
-            {{t "button.new"}}
-        {{/link-to}}
-        <h1 class="card-title">
-            {{t "<%= dasherizedModuleName %>.title.index"}}
-        </h1>
+        <div class="row">
+          <div class="col-md-9 col-lg-10">
+            <h1 class="card-title">
+              {{t "<%= dasherizedModuleName %>.title.index"}}
+            </h1>
+          </div>
+          <div class="col-md-3 col-lg-2">
+            {{#link-to "<%= dasherizedModuleNamePlural %>.new" tagName="a" class="btn btn-new" }}
+              {{t "button.new"}}
+            {{/link-to}}
+          </div>
+        </div>
     </div>
     {{#if model.length}}
     <div class="table-responsive">
@@ -48,7 +54,7 @@
             </tbody>
         </table>
     </div>
-    {{page-numbers content=content}}
+    {{page-numbers content=model}}
     {{else}}
     <div class="card-body blankslate">
         {{t "<%= dasherizedModuleName %>.messages.empty"}}

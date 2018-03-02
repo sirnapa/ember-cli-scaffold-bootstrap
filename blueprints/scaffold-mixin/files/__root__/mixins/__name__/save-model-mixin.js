@@ -11,9 +11,9 @@ export default Ember.Mixin.create(AuthenticatedRouteMixin, {
       var route = this;
       route.get('busy').show();
 
-      this.currentModel.save().then(function() {
+      this.currentModel.save().then(function(savedObject) {
         route.get('busy').hide();
-        route.transitionTo('<%= dasherizedModuleNamePlural %>');
+        route.transitionTo('<%= dasherizedModuleNamePlural %>.show', savedObject);
         route.get('notify').success(route.get('i18n').t('<%= dasherizedModuleName %>.messages.save.success'));
       }, function() {
         route.get('busy').hide();
