@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-scaffold-bootstrap",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -33,6 +33,7 @@
     "chalk": "1.0.0",
     "ember-busy-blocker": "0.1.0",
     "ember-cli-pagination": "3.0.2",
+    "ember-font-awesome": "^4.0.0-rc.2",
     "ember-i18n": "5.0.0",
     "ember-router-generator": "^1.1.1",
     "ember-simple-auth": "1.2.0",
