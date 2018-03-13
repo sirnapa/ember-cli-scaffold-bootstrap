@@ -24,6 +24,16 @@
             </div>
           </div>
           <% }); %>
+          <div class="text-right">
+            {{#link-to "<%= dasherizedModuleNamePlural %>.edit" model class="btn btn-primary"}}
+              {{t "action.edit"}}
+            {{/link-to}}
+
+            <a href="#" {{action "remove" model}} class="btn btn-danger">
+              {{t "action.remove"}}
+            </a>
+          </div>
+
         </div>
     </div>
 </div>
